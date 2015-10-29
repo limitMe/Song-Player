@@ -1,0 +1,1 @@
+var numOfPhoto = 5;

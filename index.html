@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="dns-prefetch" href="/static.kgimg.com" />
+    <title>钟典在路上</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no;address=no;email=no" />
+	<link href="v2/static/css/style.css?20130320" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+		var _hmt = window._hmt || [];
+	</script>
+</head>
+<body>
+<div style="position: absolute;z-index:-1">
+    <img id="blurCover" src="static/images/middle/1_blur.jpg" style="width:100%" />
+</div>
+<div class="loading" id="loading" style="display:none;"></div>
+
+<!--S top_fixed-->
+<div class="top_fixed" id="top_fixed">
+	<!--=S mod_header -->
+	<div class="mod_header" id="mod_header">
+		<div class="tit" id="tabtitle" style="">钟典在路上 第六天</div>	
+	</div>
+	<!--=E mod_header -->
+
+
+</div>
+<!--E top_fixed-->
+
+<!--S wrap -->
+<div class="wrap wrap_player">
+	<!--=S 播放器页 mod_mainplayer -->
+	<div class="mod_mainplayer" id="mod_mainplayer" style="">
+		<div class="con">
+			<div class="cover" id="cover" style="display:block;background-color:#efefef"><img id="coverPhoto" src="static/images/middle/1.jpg" width="100%"><i style="display:none;"></i></div>
+			<div class="lrc" style="display:none;">
+				<div id="lrc" class="lrc_con">
+</div>
+			</div>
+		</div>
+        
+        <div id="space" style="height:50px">
+        </div>
+        
+		<div class="tools" id="tools">
+			<div class="control">
+				<div class="btn_download" id="btn_download"><span></span></div>
+				<div class="btn_play" id="btn_mainplay"><span></span></div>
+				<div id="btn_change" class="btn_change btn_cover"><span></span></div>
+			</div>
+
+			<div class="time_wrap" id="time_wrap">
+				<div id="timeshow">00:00</div>
+				<div class="progress_wrap" id="progress_wrap">
+					<div class="progress" id="progress"></div>
+				</div>
+				<div id="time">00:00</div>
+			</div>
+		</div>
+	</div>
+	<!--=E 播放器页 mod_mainplayer -->
+</div>
+<!--E wrap -->
+
+<!--S mod_player -->
+<div class="mod_player" id="mod_player" style="display:none;">
+	<div class="songname"><span id="songname">听音乐，找酷狗</span></div>
+	<div class="control">
+		<div id="btn_play" class="btn btn_play"><span></span></div>
+		<div id="btn_next" class="btn btn_next"><span></span></div>
+	</div>
+</div>
+<!--E mod_player -->
+
+<!--S 弹出层 pop_down -->
+<div class="pop_down" id="pop_down" style="display:none;">
+    <div class="close"><span></span></div>
+    <div class="txt"><span>使用合作伙伴酷狗音乐下载</span></div>
+    <div class="btns">
+        <a href="http://downmobile.kugou.com/promote/package/download/channel=6" target="_blank" id="btn_inst" class="btn_inst"><span id="tcdownload" onclick="_hmt.push(['_trackEvent','tcsoftware', 'tcdownload', 'tckugou']);"><img src="v2/static/images/index/pop_inst.png" width="100%"></span></a>
+        <a href="javascript:;" class="btn_open" onclick="_index.funs.openApp();return false;"><span><img src="v2/static/images/index/pop_open.png" width="100%"></span></a>
+    </div>
+</div>
+<!--E pop_down -->
+<div class="pop_bg" id="pop_bg" style="display:none;"></div>
+</body>
+</html>
+
+<script>
+!function(){if(navigator.userAgent.match(/AppleWebKit.*Mobile.*/)){var a=document.body.currentStyle||document.defaultView.getComputedStyle(document.body,"");a&&8==parseInt(a,10)&&setTimeout(function(){var a=window.innerWidth||document.documentElement.clientWidth,b=Math.ceil(16*a/480);b%2==1&&b++;try{document.getElementsByTagName("html")[0].style.fontSize=b+"px",document.getElementsByTagName("body")[0].style.fontSize=b+"px"}catch(c){}},1e3)}}();
+</script>
+
+<script type="text/javascript" src="v2/static/js/base.js"></script>
+<script type="text/javascript" src="v2/static/js/player-min.js"></script>
+<script type="text/javascript" src="v2/static/js/index-min.js"></script>
+<script type="text/javascript" src="v2/static/js/router.js"></script>
+<script type="text/javascript" src="v2/static/js/songdata.js"></script>
+<script type="text/javascript" src="v2/static/js/photodata.js"></script>
+<script type="text/javascript">
+var currentPhoto = numOfPhoto;
+    
+    //initial update
+    document.getElementById("coverPhoto").src = "static/images/middle/"+currentPhoto.toString()+".jpg";
+    document.getElementById("blurCover").src = "static/images/middle/"+currentPhoto.toString()+"_blur.jpg";
+    
+function refleshPhoto(){	
+    if(currentPhoto > 1)
+    {
+        currentPhoto = currentPhoto - 1;
+    }
+    else
+    {
+        currentPhoto = numOfPhoto;
+    }
+    var coverPhoto = document.getElementById("coverPhoto");
+    coverPhoto.src = "static/images/middle/"+currentPhoto.toString()+".jpg";
+    var backPhoto = document.getElementById("blurCover");
+    backPhoto.src = "static/images/middle/"+currentPhoto.toString()+"_blur.jpg";
+}
+setInterval("refleshPhoto()",50000);
+</script>
+
+
+
